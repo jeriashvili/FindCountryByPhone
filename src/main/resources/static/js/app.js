@@ -27,12 +27,12 @@ function checkPhoneNumberLength(phoneNumber) {
 }
 
 function ajaxCall(phoneNumber) {
-    var endpoint = 'http://localhost:8080/find-country/' + phoneNumber;
+    var endpoint = 'http://localhost:8080/get-country/' + phoneNumber;
     $.ajax({
         url: endpoint,
         type: 'GET',
         success: function(res) {
-            alert(res.countryName);
+            alert(res.country);
         },
         error: function (request, status, error) {
             alert(status);

@@ -19,14 +19,14 @@ public class GetCountryController {
     private FindCountryService findCountryService;
 
 
-    @GetMapping(path = "get-country/{phone-number}")
+    @GetMapping(path = "/get-country/{phone-number}")
     public CodeAndCountryResponse getCountry(@PathVariable(value = "phone-number") String phoneNumber) {
         try {
             return findCountryService.findCountry(phoneNumber);
         } catch (Exception e) {
             LOGGER.error("error occurred ", e);
         }
-        return null;
+        return  new CodeAndCountryResponse(-1,"Unknown");
     }
 
 }
