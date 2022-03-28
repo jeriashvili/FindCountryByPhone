@@ -4,6 +4,6 @@ import java.util.Map;
 
 public interface WikiDataRetrieverService {
 
-    Map<String,String> getData() throws Exception;
+    Map<String, String> getData() throws Exception;
 
 }
